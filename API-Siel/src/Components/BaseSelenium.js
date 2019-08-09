@@ -6,8 +6,13 @@ chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build())
 
 let o = new chrome.Options();
 o.addArguments('disable-infobars');
-//o.addArguments('--no-startup-window'); // Estudar esse comando, ele roda o Browser sem visibilidade ao usuário, mas gerou alguns erros
 o.setUserPreferences({ credential_enable_service: false });
+
+// Tentativas de deixar invisivel
+//o.addArguments('--no-startup-window'); // Estudar esse comando, ele roda o Browser sem visibilidade ao usuário, mas gerou alguns erros
+//o.addArguments('--window-size=1,1');
+o.addArguments('headless'); // Funcionou
+
 
 var Page = function() {
     this.driver = new Builder()

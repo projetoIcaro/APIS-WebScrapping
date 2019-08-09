@@ -5,7 +5,7 @@ const routes = require('express').Router()
 const GetDataController = require('./Controller/GetDataController')
 
 // Rotas
-routes.get("/Siel/GetData", GetDataController.GetData)
+routes.post("/Siel/GetData", GetDataController.GetData)
 
 module.exports = routes;
 
