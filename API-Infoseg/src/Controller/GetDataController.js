@@ -11,7 +11,7 @@ module.exports = {
                 let nome = req.body.nome
 
                 await page.visit('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/infoseg/login.html')
-                await page.findBotaoInicial(cpf, nome)
+                await page.sfindBotaoInicial(cpf, nome)
 
                 /*let jsonResult*/
                 /* return res.json(JSON.parse(jsonResult))*/
