@@ -1,0 +1,20 @@
+{
+  "name": "api-siel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^76.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "pdf2json": "^1.1.8",
+    "selenium-webdriver": "^4.0.0-alpha.4"
+  }
+}
