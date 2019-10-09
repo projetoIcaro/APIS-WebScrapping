@@ -17,7 +17,6 @@ module.exports = {
                 await page.VizualizarDados()
                 let jsonResult = await page.ColetarDados()
                 
-                page.quit();
                 return res.json(jsonResult)
             }
     
