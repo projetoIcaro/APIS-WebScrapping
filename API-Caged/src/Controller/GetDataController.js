@@ -45,11 +45,9 @@ module.exports = {
 
 function montaJsonFinal(jsonResponsavel, jsonEmpresa, jsonTrabalhador){
     return {
-        "jsonResult": {
             "Responsavel": jsonResponsavel,
             "Empresa": jsonEmpresa,
             "Trabalhador": jsonTrabalhador,
-        }
     }
 }
 
