@@ -31,6 +31,7 @@ module.exports = {
                 let jsonTrabalhador = await page.ConsultaDadosTrabalhador()                
                 let jsonResult = montaJsonFinal(jsonResponsavel, jsonEmpresa, jsonTrabalhador)
 
+                page.quit();
                 return res.json(jsonResult)
             }
     

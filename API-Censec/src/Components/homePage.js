@@ -52,7 +52,7 @@ Page.prototype.ColetarDados = async function () {
         /* Coleta partes dinamicamente */
         let nextTR = true
         let count = 0
-        var listaPartes = []
+        var listaPartes = {}
         while(nextTR == true){
             let nomeParte = (await this.getText(await this.findByXPath(`/html/body/form/div[5]/div/div[3]/div[2]/div[6]/div[1]/div/div/table/tbody/tr[${count+1}]/td[2]`))).replace(" ", "")
             let cpfParte = (await this.getText(await this.findByXPath(`/html/body/form/div[5]/div/div[3]/div[2]/div[6]/div[1]/div/div/table/tbody/tr[${count+1}]/td[3]`))).replace(" ", "")
@@ -69,7 +69,7 @@ Page.prototype.ColetarDados = async function () {
         /* Coleta Contatos Dinamicamente */
         let nextTRcontato = true
         let countContato = 0
-        var listaContatos = []
+        var listaContatos = {}
         while(nextTRcontato == true){
             let telefoneContato = (await this.getText(await this.findByXPath(`/html/body/form/div[5]/div/div[3]/div[2]/div[7]/div[2]/div[2]/div/table/tbody/tr[${countContato+1}]/td[1]`))).replace(" ", "")
             let tipoContato = (await this.getText(await this.findByXPath(`/html/body/form/div[5]/div/div[3]/div[2]/div[7]/div[2]/div[2]/div/table/tbody/tr[${countContato+1}]/td[2]`))).replace(" ", "")

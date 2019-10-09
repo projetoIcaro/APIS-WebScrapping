@@ -16,7 +16,8 @@ module.exports = {
                 await page.PreencheCPFeConsulta(cpf)
                 await page.VizualizarDados()
                 let jsonResult = await page.ColetarDados()
-
+                
+                page.quit();
                 return res.json(jsonResult)
             }
     

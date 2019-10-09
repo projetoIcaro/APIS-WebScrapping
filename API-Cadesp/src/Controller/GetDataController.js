@@ -16,6 +16,8 @@ module.exports = {
                 await page.ColocaMouseSobreMenu()
                 await page.AcessaMenuCadastro()
                 await page.FazPesquisaViaCNPJ(cnpj)
+
+                page.quit();
                 return res.json(await page.ColetaDados())
             }
     

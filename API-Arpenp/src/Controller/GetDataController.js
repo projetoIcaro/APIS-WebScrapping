@@ -18,7 +18,8 @@ module.exports = {
                 await page.findBotaoVara()
                 await page.findBotaoVaraClick()
                 await page.findBotaoProcesso()
-                
+
+                page.quit();                
                 let jsonResult = await page.ColetaDadosFinais()
                 return res.json(JSON.parse(jsonResult))
             }
