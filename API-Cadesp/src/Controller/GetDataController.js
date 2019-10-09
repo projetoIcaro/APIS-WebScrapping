@@ -5,7 +5,7 @@ module.exports = {
         let page
 
         try {
-            if(!req.body.cpf == "" && !req.body.nome == ""){
+            if(!req.body.cpf == "" && !req.body.nome == "" && !req.body.cnpj == ""){
                 page = new Page()
                 let cpf = req.body.cpf
                 let nome = req.body.nome
@@ -19,7 +19,7 @@ module.exports = {
                 return res.json(await page.ColetaDados())
             }
     
-            return res.json(JSON.parse(`{"Status":"Falhou", "error":"CPF/Nome Vazio"}`))
+            return res.json(JSON.parse(`{"Status":"Falhou", "error":"CPF/Nome/CNPJ Vazio"}`))
         }catch(err){
             console.log(err)
             return res.json(JSON.parse(`{"Status":"Falhou", "error":${err}}`))
