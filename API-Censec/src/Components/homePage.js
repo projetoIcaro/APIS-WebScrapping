@@ -83,18 +83,18 @@ Page.prototype.ColetarDados = async function () {
         
         // Monta JSON
         return {
-            "codigoCarga": codigoCarga,
-            "mesReferencia": mesReferencia,
-            "anoReferencia": anoReferencia,
-            "atoReferencia": atoReferencia,
-            "diaReferencia": diaReferencia,
-            "livroReferencia": livroReferencia,
-            "folhaReferencia": folhaReferencia,
-            "partes": listaPartes,
-            "ufCartorio": ufCartorio,
-            "municipioCartorio": municipioCartorio,
-            "nomeCartorio": nomeCartorio,
-            "contatos": listaContatos,
+            "Codigo Carga": codigoCarga,
+            "Mes Referencia": mesReferencia,
+            "Ano Referencia": anoReferencia,
+            "Ato Referencia": atoReferencia,
+            "Dia Referencia": diaReferencia,
+            "Livro Referencia": livroReferencia,
+            "Folha Referencia": folhaReferencia,
+            "Partes": listaPartes,
+            "Uf Cartorio": ufCartorio,
+            "Municipio Cartorio": municipioCartorio,
+            "Nome Cartorio": nomeCartorio,
+            "Contatos": listaContatos,
         }
 }
 
