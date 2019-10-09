@@ -45,16 +45,16 @@ Page.prototype.ColetaDados = async function () {
 
     //Retorna no JSON
     return{
-        "codigoIE": codigoIE,
-        "nomeEmpresarial": nomeEmpresarial,
-        "drt": drt,
-        "situacao": situacao,
-        "dataInscricao": dataInscricao,
-        "regimeEstadual": regimeEstadual,
-        "postoFiscal": postoFiscal,
-        "nire": nire,
-        "tipoUnidade": tipoUnidade,
-        "formaAtuacao": formaAtuacao,
+        "codigo IE": codigoIE,
+        "Nome Empresarial": nomeEmpresarial,
+        "DRT": drt,
+        "Situacao": situacao,
+        "Data Inscricao": dataInscricao,
+        "Regime Estadual": regimeEstadual,
+        "Posto Fiscal": postoFiscal,
+        "NIRE": nire,
+        "Tipo Unidade": tipoUnidade,
+        "Forma Atuacao": formaAtuacao,
     }
 }
 

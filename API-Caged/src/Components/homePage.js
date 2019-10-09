@@ -66,17 +66,17 @@ Page.prototype.ConsultaDadosEmpresa = async function () {
     let totalVariacaoAbsoluta = await this.getText(await this.findById('formResumoEmpresaCaged:txtTotalVariacaoAbosulta'))   
     
     return {
-        "raizCNPJ": raizCNPJ,
-        "razaoSocial": razaoSocial,
-        "codAtividadeEconomica": codAtividadeEconomica,
-        "descricaoAtividadeEconomica": descricaoAtividadeEconomica,
-        "numeroFiliais": numeroFiliais,
-        "totalVinculos": totalVinculos,
-        "totalPrimeiroDia": totalPrimeiroDia,
-        "totalAdmissoes": totalAdmissoes,
-        "totalDesligamentos": totalDesligamentos,
-        "totalUltimoDia": totalUltimoDia,
-        "totalVariacaoAbsoluta": totalVariacaoAbsoluta,
+        "Raiz CNPJ": raizCNPJ,
+        "Razão Social": razaoSocial,
+        "Codigo Atividade Economica": codAtividadeEconomica,
+        "Descrição Atividade Economica": descricaoAtividadeEconomica,
+        "Numero Filiais": numeroFiliais,
+        "Total Vinculos": totalVinculos,
+        "Total PrimeiroDia": totalPrimeiroDia,
+        "Total Admissoes": totalAdmissoes,
+        "Total Desligamentos": totalDesligamentos,
+        "Total UltimoDia": totalUltimoDia,
+        "Total VariacaoAbsoluta": totalVariacaoAbsoluta,
     }
 }
 
