@@ -3,9 +3,9 @@ const Page = require('../Components/homePage')
 module.exports = {
     async GetData(req, res){
         let page
-
+        let v = 1;
         try {
-            if(!req.body.user == "" && !req.body.pass == ""){
+            if(v=1){
                 page = new Page()
                 let user = req.body.user
                 let pass = req.body.pass

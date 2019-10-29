@@ -70,7 +70,20 @@
 [0809/022941.279:ERROR:exception_snapshot_win.cc(98)] thread ID 9488 not found in process
 [0816/230411.060:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
 [0816/230411.061:ERROR:exception_snapshot_win.cc(98)] thread ID 15516 not found in process
+<<<<<<< HEAD
 [1010/112500.544:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
 [1010/112500.546:ERROR:exception_snapshot_win.cc(98)] thread ID 37348 not found in process
 [1010/112500.553:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
 [1010/112500.554:ERROR:exception_snapshot_win.cc(98)] thread ID 28128 not found in process
+=======
+[1009/181316.726:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
+[1009/181316.745:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
+[1009/181316.745:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
+[1009/181316.746:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
+[1009/181316.746:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
+[1009/181316.746:ERROR:exception_snapshot_win.cc(98)] thread ID 74148 not found in process
+[1028/214125.615:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
+[1028/214125.643:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
+[1028/214125.643:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
+[1028/214125.656:ERROR:exception_snapshot_win.cc(98)] thread ID 7992 not found in process
+>>>>>>> b7efb695362caa5e1581781c041fc276edf77755
