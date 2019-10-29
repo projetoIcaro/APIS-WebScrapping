@@ -6,9 +6,14 @@ chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build())
 
 let o = new chrome.Options();
 o.addArguments('disable-infobars');
-o.setUserPreferences({ credential_enable_service: false });
-//o.addArguments('headless');
+o.setUserPreferences({ credential_enable_service: false});
+o.setUserPreferences({ ignoreHTTPSErrors: true});
+o.setUserPreferences({ ignoreHTTPErrors: true});
 
+//o.addArguments('headless');
+/*DesiredCapabilities handlSSLErr = DesiredCapabilities.chrome ()       
+handlSSLErr.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true)
+WebDriver driver = new ChromeDriver (handlSSLErr);*/
 
 var Page = function() {
     this.driver = new Builder()
@@ -20,6 +25,31 @@ var Page = function() {
     this.visit = async function(theUrl) {
         return await this.driver.get(theUrl);
     };
+
+    this.findAndCloseAlert = async function() {
+        await this.driver.switchTo().alert().then(
+            function() {
+              console.log("alert detected");
+              this.driver.switchTo().alert().accept();
+            },
+            function() {
+              console.log("no alert detected");
+            }
+          );
+
+        /* 
+        console.log('Teste')
+        let alert = await this.driver.switchTo().alert()
+        console.log('aa')
+        let teste = alert.getText()            
+        console.log('aa')
+        console.log(teste)
+        alert.accept()
+        console.log('aa')
+        this.switchTo().defaultContent()        
+        console.log('aa')
+        */
+    }
 
     this.getText = async function(Element) {
         let text = await this.driver.wait(async function () {

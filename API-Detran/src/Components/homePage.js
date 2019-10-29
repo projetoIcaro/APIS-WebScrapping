@@ -15,22 +15,56 @@ Page.prototype.ClicaBotaoPrimeiraPagina = async function (cpf) {
 }
 
 
+Page.prototype.coletaPrimeiroPDF = async function () {
+    let xpathPesquisar = '/html/body/div[4]/div/table/tbody/tr/td/div/div/form/div[1]/div[2]/table[3]/tbody/tr/td/a'
+    let elemPesquisar = await this.findByXPath(xpathPesquisar)
+    let linkPDF = "";
+    await elemPesquisar.getAttribute("href").then((result) => {
+        linkPDF = result
+    })
+
+    return linkPDF;
+}
+
+Page.prototype.coletaImagemCNH = async function () {
+    let xpathPesquisar = '/html/body/div[4]/div/table/tbody/tr/td/div/div/form/div[1]/div[2]/table[3]/tbody/tr/td/a'
+    let elemPesquisar = await this.findByXPath(xpathPesquisar)
+    let linkPDF = "";
+    await elemPesquisar.getAttribute("href").then((result) => {
+        linkPDF = result
+    })
+
+    return linkPDF;
+}
+
+Page.prototype.coletaPDFVeiculo = async function () {
+    let xpathPesquisar = '/html/body/div[4]/div/table/tbody/tr/td/div/div/form/div[1]/div[2]/table[3]/tbody/tr/td/a'
+    let elemPesquisar = await this.findByXPath(xpathPesquisar)
+    let linkPDF = "";
+
+
+    await elemPesquisar.getAttribute("href").then((result) => {
+        linkPDF = result
+    })
+
+    return linkPDF;
+}
+
+
+
 Page.prototype.AcessaMenuCondutor = async function () {
     await this.moveMouseTo((await this.findById('navigation_a_M_16')))
     await ((await this.findById('navigation_a_F_16'))).click()    
 }
 
-Page.prototype.coletarDadosPDF = async function () {
-    let pdfParser = new PDFParser(this, 1)
-    
-    pdfParser.on("pdfParser_dataError", errData => console.error(`errData: ${errData.parserError}`))
-    pdfParser.on("pdfParser_dataReady", pdfdata => {
-        console.log('pdfdata')
-        console.log(pdfdata)
-        return pdfdata
-    })
+Page.prototype.AcessaMenuImagemCNH = async function () {
+    await this.moveMouseTo((await this.findById('navigation_a_M_16')))
+    await ((await this.findByXPath('/html/body/div[3]/div/table/tbody/tr/td[2]/nav/ul/li[2]/ul/li[2]/a'))).click()
+}
 
-    pdfParser.loadPDF('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/detran/pagina6-relat%C3%B3rio-linha-de-vida.pdf');    
+Page.prototype.AcessaMenuVeiculo = async function () {
+    await this.moveMouseTo((await this.findById('navigation_a_M_18')))
+    await ((await this.findById('navigation_a_F_18'))).click()
 }
 
 

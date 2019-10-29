@@ -29,6 +29,7 @@ var Page = function() {
         return text
     }
 
+
     this.elementExistsByXpath = async function(ElementXpath){        
         let exists = false;
         await this.driver.wait(until.elementLocated(By.xpath(ElementXpath)), 1000).then((elm) =>{

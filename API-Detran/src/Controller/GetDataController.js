@@ -12,10 +12,19 @@ module.exports = {
                 await page.visit('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/detran/login.html')
                 await page.ClicaBotaoPrimeiraPagina(cpf)
                 await page.AcessaMenuCondutor()
-                await page.visit('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/detran/pagina6-relat%C3%B3rio-linha-de-vida.pdf')
-                let teste = await page.coletarDadosPDF()                
-                return res.json({})
-                //return res.json(await page.ColetaDados())
+                let linkPrimeiroPDF = await page.coletaPrimeiroPDF()
+                await page.AcessaMenuImagemCNH()
+                let linkImagemCNH = await page.coletaImagemCNH()
+                await page.AcessaMenuVeiculo()
+                let linkVeiculo = await page.coletaPDFVeiculo()              
+
+                let jsonFinal = {
+                    linkPrimeiroPDF,
+                    linkImagemCNH,
+                    linkVeiculo
+                }
+
+                return res.json({jsonFinal})
             }
     
             return res.json(JSON.parse(`{"Status":"Falhou", "error":"CPF/Nome Vazio"}`))
@@ -23,6 +32,5 @@ module.exports = {
             console.log(err)
             return res.json(JSON.parse(`{"Status":"Falhou", "error":${err}}`))
         }
-
     }
 }
