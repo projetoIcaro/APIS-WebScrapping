@@ -7,15 +7,15 @@ module.exports = {
         try {
             if(!req.body.cpf == "" && !req.body.nome == ""){
                 page = new Page()
-                let cpf = req.body.cpf
-                let nome = req.body.nome
+
+                await page.visit('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/login')
+                await page.authSession()
 
                 await page.visit('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/infocrim/login.html')
-                await page.findBotaoInicial()
-
-                /*let jsonResult*/
-                /* return res.json(JSON.parse(jsonResult))*/
-                return res.json(JSON.parse(`{"Status":"Falhou", "error":"CPF/Nome Vazio"}`))
+                await page.AcessaTelaDeDados()
+                
+                let jsonResult = await page.coletaDados()
+                return res.json(jsonResult)
             }
     
             return res.json(JSON.parse(`{"Status":"Falhou", "error":"CPF/Nome Vazio"}`))

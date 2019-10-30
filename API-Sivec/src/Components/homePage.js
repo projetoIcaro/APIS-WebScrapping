@@ -14,6 +14,7 @@ Page.prototype.authSession = async function () {
 
 
 
+
 Page.prototype.PreencheDadosEEnviaTela = async function (user, pass) {
 
     let actualPage = this;

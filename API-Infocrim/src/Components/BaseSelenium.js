@@ -7,8 +7,7 @@ chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build())
 let o = new chrome.Options();
 o.addArguments('disable-infobars');
 o.setUserPreferences({ credential_enable_service: false });
-
-// o.addArguments('headless'); // Funcionou
+o.addArguments('headless')
 
 
 var Page = function() {
