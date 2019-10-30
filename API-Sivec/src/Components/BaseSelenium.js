@@ -6,14 +6,8 @@ chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build())
 
 let o = new chrome.Options();
 o.addArguments('disable-infobars');
-o.setUserPreferences({ credential_enable_service: false});
-o.setUserPreferences({ ignoreHTTPSErrors: true});
-o.setUserPreferences({ ignoreHTTPErrors: true});
+o.addArguments('headless');
 
-//o.addArguments('headless');
-/*DesiredCapabilities handlSSLErr = DesiredCapabilities.chrome ()       
-handlSSLErr.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true)
-WebDriver driver = new ChromeDriver (handlSSLErr);*/
 
 var Page = function() {
     this.driver = new Builder()

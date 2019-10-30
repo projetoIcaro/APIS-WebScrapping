@@ -5,24 +5,21 @@ module.exports = {
         let page
         let v = 1;
         try {
-            if(!req.body.rg == "" && !req.body.nome == "" && !req.body.pis == ""){
+            if(!req.body.nome == ""){
                 page = new Page()
+
+                await page.visit('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/login')
+                await page.authSession()
 
                 await page.visit('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/sivec/login.html')
                 await page.PreencheDadosEEnviaTela('aaa', 'aaa')
+                await page.Busca()
+                let jsonResult = await page.ColetaDados()
 
-                //await page.IniciaBuscaRG();
-                //await page.IniciaBuscaNome();
-                //await page.IniciaBuscaPis();
-                
-                // Ao acessar pagina seguinte, 2 popup na tela.
-                await page.Busca();
-                
-                // let jsonResult = await page.ColetaDadosFinais()
-                // return res.json(JSON.parse(jsonResult))
+                return res.json(jsonResult)
             }
     
-            return res.json(JSON.parse(`{"Status":"Falhou", "error":"Nome/Rg/Pis vazios"}`))
+            return res.json(JSON.parse(`{"Status":"Falhou", "error":"Nome vazios"}`))
         }catch(err){
             console.log(err)
             return res.json(JSON.parse(`{"Status":"Falhou", "error":${err}}`))
