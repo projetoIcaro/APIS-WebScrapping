@@ -7,7 +7,7 @@ chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build())
 let o = new chrome.Options();
 o.addArguments('disable-infobars');
 o.setUserPreferences({ credential_enable_service: false });
-//o.addArguments('headless');
+o.addArguments('headless');
 
 var Page = function() {
     this.driver = new Builder()
@@ -18,6 +18,10 @@ var Page = function() {
     // visit a webpage
     this.visit = async function(theUrl) {
         return await this.driver.get(theUrl);
+    };
+
+    this.goToEndOfPage = async function(theUrl) {
+        return await this.driver.executeScript('window.scrollTo(0,100000);');
     };
 
     this.getText = async function(Element) {
@@ -54,6 +58,11 @@ var Page = function() {
     this.write = async function (el, txt) {
         return await el.sendKeys(txt);
     };
+
+    this.moveMouseTo = async function(element) {
+        let actions = this.driver.actions({bridge: true})
+        await actions.move({duration:100,origin:element,x:0,y:0}).perform();
+    }
 };
 
 module.exports = Page

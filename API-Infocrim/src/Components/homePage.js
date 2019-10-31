@@ -33,44 +33,13 @@ Page.prototype.coletaDados = async function () {
     let representante = await this.getText(await this.findByXPath('/html/body/pre[8]/a'))
     let resumoDados = (await this.getText(await this.findByXPath('/html/body/pre[1]')))
     
-    /*console.log('aaa')
-    let local = await this.getText(await this.findByXPath('/html/body/pre[1]/text()[4]'))
-    console.log('aaa')
-    let complemento = await this.getText(await this.findByXPath('/html/body/pre[1]/text()[5]'))
-    console.log('aaa')
-    let tipoLocal = await this.getText(await this.findByXPath('/html/body/pre[1]/text()[6]'))
-    console.log('aaa')
-    let circunscricao = await this.getText(await this.findByXPath('/html/body/pre[1]/text()[7]'))
-    let dataOcorrencia = await this.getText(await this.findByXPath('/html/body/pre[1]/text()[8]'))
-    let Solucao = await this.getText(await this.findByXPath('/html/body/pre[1]/text()[11]'))*/
-
     //Retorna no JSON
     return{
         "Autor": autor,
         "Vitima": vitima,
         "Representante": representante,
         resumoDados
-        /*"Natureza Crime": naturezaCrime,
-        "Local": local,
-        "Complemento": complemento,
-        "Tipo Local": tipoLocal,
-        "Circunscricao": circunscricao,
-        "Data Ocorrencia": dataOcorrencia,
-        "Data Comunicacao": dataComunicacao,               
-        Solucao        */
     }
-
-
-}
-
-
-
-async function buildJsonResult(eleitor, zona, data, codigo){
-    let string = `{"eleitor":"${eleitor}",`
-    string += `"zona":"${zona}",`
-    string += `"data":"${data}",`
-    string += `"codigo":"${codigo}"}`
-    return string
 }
 
 module.exports = Page
